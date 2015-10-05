@@ -3,6 +3,9 @@ using System.Collections;
 
 public class RoomScript : MonoBehaviour
 {
+
+    private PlayerScript _player = null;
+
     // Use this for initialization
     void Start()
     {
@@ -15,16 +18,19 @@ public class RoomScript : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        Debug.Log(collision.name + " collided with me");
+        Debug.Log(name + " " + collision.name + " collided with me");
+        var script = collision.gameObject.GetComponent<PlayerScript>();
+        _player = script;
     }
 
     void OnTriggerStay(Collider collision)
     {
-        Debug.Log(collision.name + " is within my boundaries");
+        Debug.Log(name + " " + collision.name + " is within my boundaries");
     }
 
     void OnTriggerExit(Collider collision)
     {
-        Debug.Log(collision.name + " exited my boundaries");
+        Debug.Log(name + " " + collision.name + " exited my boundaries");
+        _player = null;
     }
 }
