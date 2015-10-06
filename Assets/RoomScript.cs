@@ -10,6 +10,18 @@ public class RoomScript : MonoBehaviour
     public String RoomTag;
 
     private PlayerScript _player = null;
+    private Boolean _lighted = false;
+
+    public Boolean Lighted
+    {
+        get { return _lighted; }
+        set
+        {
+            if (value == _lighted) return;
+            _lighted = value;
+            _roomLights.ForEach(rl => rl.GetComponent<Light>().intensity = value ? 8.0f : 0.0f);
+        }
+    }
 
     // Use this for initialization
     void Start()
@@ -27,18 +39,13 @@ public class RoomScript : MonoBehaviour
         Debug.Log(name + " " + collision.name + " collided with me");
         var script = collision.gameObject.GetComponent<PlayerScript>();
         _player = script;
-        _roomLights.ForEach(rl => rl.GetComponent<Light>().intensity = 8.0f);
+        Debug.Log(_player.Temperature);
     }
 
     void OnTriggerStay(Collider collision)
     {
         Debug.Log(name + " " + collision.name + " is within my boundaries");
-
-        //See if there is no better method
-        //foreach (var li in _roomLights.Select(rl => rl.GetComponent<Light>()).Where(l => l.intensity != 8.0f))
-        //{
-        //    li.intensity = 8.0f;
-        //}
+        Lighted = true;
 
     }
 
@@ -46,6 +53,6 @@ public class RoomScript : MonoBehaviour
     {
         Debug.Log(name + " " + collision.name + " exited my boundaries");
         _player = null;
-        _roomLights.ForEach(rl => rl.GetComponent<Light>().intensity = 0.0f);
+        Lighted = false;
     }
 }
