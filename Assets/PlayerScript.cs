@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(CharacterController))]
 public class PlayerScript : MonoBehaviour
 {
     public double Temperature = 37.5f;
