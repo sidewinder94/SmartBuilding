@@ -18,6 +18,7 @@ ModelImporter:
     100020: Walls 1F
     100022: Walls 2F
     100024: Walls 2F.bkp
+    100026: Staircage
     400000: Camera
     400002: Cubes.bool
     400004: Floor
@@ -31,6 +32,7 @@ ModelImporter:
     400020: Walls 1F
     400022: Walls 2F
     400024: Walls 2F.bkp
+    400026: Staircage
     2300000: Cubes.bool
     2300002: Floor
     2300004: Floor 2F
@@ -41,6 +43,7 @@ ModelImporter:
     2300014: Walls 1F
     2300016: Walls 2F
     2300018: Walls 2F.bkp
+    2300020: Staircage
     3300000: Cubes.bool
     3300002: Floor
     3300004: Floor 2F
@@ -51,6 +54,7 @@ ModelImporter:
     3300014: Walls 1F
     3300016: Walls 2F
     3300018: Walls 2F.bkp
+    3300020: Staircage
     4300000: Garage door
     4300002: Stairs
     4300004: Cubes.bool
@@ -61,6 +65,7 @@ ModelImporter:
     4300014: Walls 1F
     4300016: Roof
     4300018: Walls 2F
+    4300020: Staircage
   materials:
     importMaterials: 1
     materialName: 0
