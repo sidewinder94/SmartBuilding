@@ -10,6 +10,7 @@ public class RoomScript : MonoBehaviour
     public String RoomTag;
 
     private PlayerScript _player = null;
+    private HeatPumpScript _heatPump = null;
     private Boolean _lighted = false;
 
     public Boolean Lighted
@@ -26,6 +27,7 @@ public class RoomScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        _heatPump = GameObject.FindGameObjectWithTag("HeatPump").GetComponent<HeatPumpScript>();
         _roomLights = GameObject.FindGameObjectsWithTag(RoomTag).Where(o => o.layer == 8).ToList();
     }
 
