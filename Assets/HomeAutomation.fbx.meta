@@ -1,79 +1,66 @@
 fileFormatVersion: 2
-guid: ecd41132c08a17b4fa008c8b41d01dd9
-timeCreated: 1444050524
+guid: 3b89dfcf944ff784f96ba4ccb982373a
+timeCreated: 1444133384
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Plane
-    100004: Plane_001
-    100006: Plane_002
-    100008: Cubes_bool
-    100010: Floor
-    100012: Floor_2F
-    100014: Garage_door
-    100016: Roof
-    100018: Roof_bkp
-    100020: Stairs
-    100022: Walls_1F
-    100024: Walls_2F
-    100026: Walls_2F_bkp
-    400000: //RootNode
-    400002: Plane
-    400004: Plane_001
-    400006: Plane_002
-    400008: Cubes_bool
-    400010: Floor
-    400012: Floor_2F
-    400014: Garage_door
-    400016: Roof
-    400018: Roof_bkp
-    400020: Stairs
-    400022: Walls_1F
-    400024: Walls_2F
-    400026: Walls_2F_bkp
-    2300000: Plane
-    2300002: Plane_001
-    2300004: Plane_002
-    2300006: Cubes_bool
-    2300008: Floor
-    2300010: Floor_2F
-    2300012: Garage_door
-    2300014: Roof
-    2300016: Roof_bkp
-    2300018: Stairs
-    2300020: Walls_1F
-    2300022: Walls_2F
-    2300024: Walls_2F_bkp
-    3300000: Plane
-    3300002: Plane_001
-    3300004: Plane_002
-    3300006: Cubes_bool
-    3300008: Floor
-    3300010: Floor_2F
-    3300012: Garage_door
-    3300014: Roof
-    3300016: Roof_bkp
-    3300018: Stairs
-    3300020: Walls_1F
-    3300022: Walls_2F
-    3300024: Walls_2F_bkp
-    4300000: Plane_002
-    4300002: Plane_001
-    4300004: Plane
-    4300006: Garage_door
-    4300008: Stairs
-    4300010: Cubes_bool
-    4300012: Roof_bkp
-    4300014: Walls_2F_bkp
-    4300016: Floor_2F
-    4300018: Floor
-    4300020: Walls_1F
-    4300022: Roof
-    4300024: Walls_2F
-    7400000: Default Take
-    9500000: //RootNode
+    100000: Camera
+    100002: Cubes.bool
+    100004: Floor
+    100006: Floor 2F
+    100008: Garage door
+    100010: //RootNode
+    100012: Lamp
+    100014: Roof
+    100016: Roof.bkp
+    100018: Stairs
+    100020: Walls 1F
+    100022: Walls 2F
+    100024: Walls 2F.bkp
+    400000: Camera
+    400002: Cubes.bool
+    400004: Floor
+    400006: Floor 2F
+    400008: Garage door
+    400010: //RootNode
+    400012: Lamp
+    400014: Roof
+    400016: Roof.bkp
+    400018: Stairs
+    400020: Walls 1F
+    400022: Walls 2F
+    400024: Walls 2F.bkp
+    2300000: Cubes.bool
+    2300002: Floor
+    2300004: Floor 2F
+    2300006: Garage door
+    2300008: Roof
+    2300010: Roof.bkp
+    2300012: Stairs
+    2300014: Walls 1F
+    2300016: Walls 2F
+    2300018: Walls 2F.bkp
+    3300000: Cubes.bool
+    3300002: Floor
+    3300004: Floor 2F
+    3300006: Garage door
+    3300008: Roof
+    3300010: Roof.bkp
+    3300012: Stairs
+    3300014: Walls 1F
+    3300016: Walls 2F
+    3300018: Walls 2F.bkp
+    4300000: Garage door
+    4300002: Stairs
+    4300004: Cubes.bool
+    4300006: Roof.bkp
+    4300008: Walls 2F.bkp
+    4300010: Floor 2F
+    4300012: Floor
+    4300014: Walls 1F
+    4300016: Roof
+    4300018: Walls 2F
   materials:
     importMaterials: 1
     materialName: 0
@@ -132,7 +119,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
