@@ -2,13 +2,15 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using JetBrains.Annotations;
 
-public class RoomScript : MonoBehaviour
+public class RoomScript : MonoBehaviour, INotifyPropertyChanged
 {
     public float TargetTemperature = 20.0f;
     public float CurrentTemperature = 15.0f;
-
+    public float RoomSize = 0.0f;
 
     private List<GameObject> _roomLights;
     private PlayerScript _player = null;
@@ -40,12 +42,16 @@ public class RoomScript : MonoBehaviour
     {
     }
 
+    void FixedUpdate()
+    {
+        var dt = Time.fixedDeltaTime;
+    }
+
     void OnTriggerEnter(Collider collision)
     {
         Debug.Log(name + " " + collision.name + " collided with me");
         var script = collision.gameObject.GetComponent<PlayerScript>();
         _player = script;
-        Debug.Log(_player.Temperature);
     }
 
     void OnTriggerStay(Collider collision)
@@ -60,5 +66,14 @@ public class RoomScript : MonoBehaviour
         Debug.Log(name + " " + collision.name + " exited my boundaries");
         _player = null;
         Lighted = false;
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    [NotifyPropertyChangedInvocator]
+    protected virtual void OnPropertyChanged(string propertyName)
+    {
+        var handler = PropertyChanged;
+        if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
     }
 }

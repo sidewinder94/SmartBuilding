@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OutsideScript : MonoBehaviour
+public class HeaterScript : MonoBehaviour
 {
 
 
-    public float Temperature = 10.0f;
-    public int Pressure = 101325;
-    public float Humidity = 0.76f;
-
+    public float Power = 1.5f;
     // Use this for initialization
     void Start()
     {
