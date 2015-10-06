@@ -6,10 +6,14 @@ using System.Linq;
 
 public class RoomScript : MonoBehaviour
 {
-    private List<GameObject> _roomLights;
+    public float TargetTemperature = 20.0f;
+    public float CurrentTemperature = 15.0f;
 
+
+    private List<GameObject> _roomLights;
     private PlayerScript _player = null;
     private HeatPumpScript _heatPump = null;
+    private OutsideScript _outside = null;
     private Boolean _lighted = false;
 
     public Boolean Lighted
@@ -28,6 +32,7 @@ public class RoomScript : MonoBehaviour
     {
         _heatPump = GameObject.FindGameObjectWithTag("HeatPump").GetComponent<HeatPumpScript>();
         _roomLights = GameObject.FindGameObjectsWithTag(tag).Where(o => o.layer == 8).ToList();
+        _outside = GameObject.FindGameObjectWithTag("Terrain").GetComponent<OutsideScript>();
     }
 
     // Update is called once per frame
