@@ -7,7 +7,6 @@ using System.Linq;
 public class RoomScript : MonoBehaviour
 {
     private List<GameObject> _roomLights;
-    public String RoomTag;
 
     private PlayerScript _player = null;
     private HeatPumpScript _heatPump = null;
@@ -28,7 +27,7 @@ public class RoomScript : MonoBehaviour
     void Start()
     {
         _heatPump = GameObject.FindGameObjectWithTag("HeatPump").GetComponent<HeatPumpScript>();
-        _roomLights = GameObject.FindGameObjectsWithTag(RoomTag).Where(o => o.layer == 8).ToList();
+        _roomLights = GameObject.FindGameObjectsWithTag(tag).Where(o => o.layer == 8).ToList();
     }
 
     // Update is called once per frame
