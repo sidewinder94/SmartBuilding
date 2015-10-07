@@ -2,10 +2,11 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Threading;
 using Object = UnityEngine.Object;
 
-public class HeatPumpScript : MonoBehaviour
+public class HeatPumpScript : MonoBehaviour, INotifyPropertyChanged
 {
 
     public double TotalPower = 9.0f;

@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.ComponentModel;
+using JetBrains.Annotations;
 
-public class OutsideScript : MonoBehaviour
+public class OutsideScript : MonoBehaviour, INotifyPropertyChanged
 {
 
 
@@ -19,5 +21,14 @@ public class OutsideScript : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    [NotifyPropertyChangedInvocator]
+    protected virtual void OnPropertyChanged(string propertyName)
+    {
+        var handler = PropertyChanged;
+        if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
     }
 }
