@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading;
+using JetBrains.Annotations;
 using Object = UnityEngine.Object;
 
 public class HeatPumpScript : MonoBehaviour, INotifyPropertyChanged
@@ -89,5 +90,13 @@ public class HeatPumpScript : MonoBehaviour, INotifyPropertyChanged
     void Update()
     {
 
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected virtual void OnPropertyChanged(string propertyName)
+    {
+        var handler = PropertyChanged;
+        if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
     }
 }
