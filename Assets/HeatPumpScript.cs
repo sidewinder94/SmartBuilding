@@ -50,6 +50,8 @@ public class HeatPumpScript : MonoBehaviour
 
     public void ReleasePower(double used, Object sender)
     {
+        if (used == 0.0) return;
+
         _mutex.WaitOne();
         if (_allocatedPower.ContainsKey(sender))
         {

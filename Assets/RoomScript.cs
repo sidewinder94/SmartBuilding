@@ -24,6 +24,10 @@ public class RoomScript : MonoBehaviour, INotifyPropertyChanged
     private double _allocatedPower;
     private double _powerLoss;
 
+    private double _maxPower
+    {
+        get { return _heaters.Sum(h => h.GetComponent<HeaterScript>().Power); }
+    }
 
     public Boolean Lighted
     {
@@ -81,7 +85,7 @@ public class RoomScript : MonoBehaviour, INotifyPropertyChanged
         else
         {
             //Sinon et si on doit chauffer (Target > Current)
-            if (powerLoss > 0)
+            if (TargetTemperature - CurrentTemperature > AllowedDeltaTemp)// Replace by Target and Current
             {
                 //Calcul de la masse volumique de l'air
                 double rho = (1.0f / (287.06f * (CurrentTemperature + 273.15f))) * (_outside.Pressure - 230.617 * _outside.Humidity * Math.Exp((17.503 * CurrentTemperature) / (241.2 + CurrentTemperature)));
@@ -109,8 +113,8 @@ public class RoomScript : MonoBehaviour, INotifyPropertyChanged
         }
         else
         {
-            //Sinon on demande ce qui nous manque à la pompe (elle donne ce qu'elle peut)
-            _allocatedPower += _heatPump.AskPower(neededPower - _allocatedPower, this);
+            //Sinon on demande ce qui nous manque à la pompe (elle donne ce qu'elle peut), en se limitant à la capacité thermique des radiateus de la salle
+            _allocatedPower += _heatPump.AskPower(Math.Min(neededPower - _allocatedPower, _maxPower), this);
         }
     }
 
