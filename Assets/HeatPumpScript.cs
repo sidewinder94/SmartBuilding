@@ -14,13 +14,24 @@ public class HeatPumpScript : MonoBehaviour, INotifyPropertyChanged
 
     private readonly Mutex _mutex = new Mutex();
     private readonly Dictionary<Object, double> _allocatedPower = new Dictionary<Object, double>();
+    private double _usedPower;
 
     public HeatPumpScript()
     {
         UsedPower = 0.0f;
     }
 
-    public double UsedPower { get; private set; }
+    public double UsedPower
+    {
+        get { return _usedPower; }
+        private set
+        {
+            if (_usedPower == value) return;
+            _usedPower = value;
+            OnPropertyChanged("UsedPower");
+        }
+    }
+
     public double ActualPower { get { return TotalPower - UsedPower; } }
 
     public double AskPower(double required, Object sender)

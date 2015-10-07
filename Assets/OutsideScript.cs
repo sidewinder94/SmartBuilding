@@ -7,9 +7,21 @@ public class OutsideScript : MonoBehaviour, INotifyPropertyChanged
 {
 
 
-    public float Temperature = 10.0f;
+    [SerializeField]
+    private float _temperature = 10.0f;
     public int Pressure = 101325;
     public float Humidity = 0.76f;
+
+    public float Temperature
+    {
+        get { return _temperature; }
+        set
+        {
+            if (_temperature == value) return;
+            _temperature = value;
+            OnPropertyChanged("Temperature");
+        }
+    }
 
     // Use this for initialization
     void Start()
