@@ -76,8 +76,9 @@ public class HeatPumpScript : MonoBehaviour, INotifyPropertyChanged
 
             val -= used;
             UsedPower -= used;
+            _allocatedPower[sender] = val;
 
-            if (val == 0)
+            if (val == 0.0)
             {
                 _allocatedPower.Remove(sender);
             }

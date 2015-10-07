@@ -122,7 +122,7 @@ public class RoomScript : MonoBehaviour, INotifyPropertyChanged
 
 
         //Calcul de la déperdition de chaleur
-        double powerLoss = RoomSize * InsulationConstant * (_currentTemperature - _outside.Temperature);
+        double powerLoss = RoomSize * InsulationConstant * (_currentTemperature - _outside.Temperature) / 1000;
         double neededPower = 0.0f;
 
         //Si on est dans la fourchette autorisée de la température requise
@@ -150,7 +150,7 @@ public class RoomScript : MonoBehaviour, INotifyPropertyChanged
             else
             {
                 //Si on a trop chaud, on relache toutes nos ressources pour tenter de profiter de la déperdition de chaleur pour faire baisser la température
-                _heatPump.ReleasePower(AllocatedPower, this);
+                _heatPump.ReleasePower(AllocatedPower, gameObject);
                 AllocatedPower = 0.0f;
             }
         }
@@ -158,21 +158,15 @@ public class RoomScript : MonoBehaviour, INotifyPropertyChanged
         //Si on a plus de ressources que nécessaire, on les relâches
         if (AllocatedPower > neededPower)
         {
-            _heatPump.ReleasePower(AllocatedPower - neededPower, this);
-            AllocatedPower -= neededPower;
+            _heatPump.ReleasePower(AllocatedPower - neededPower, gameObject);
+            AllocatedPower -= (AllocatedPower - neededPower);
         }
         else
         {
             //Sinon on demande ce qui nous manque à la pompe (elle donne ce qu'elle peut), en se limitant à la capacité thermique des radiateus de la salle
             var requested = Math.Min(neededPower - AllocatedPower, _maxPower - AllocatedPower);
-            if (requested != 0)
-            {
-                AllocatedPower += _heatPump.AskPower(requested, this);
-            }
-            else
-            {
-                Debug.Log(name + "got 0");
-            }
+            AllocatedPower += _heatPump.AskPower(requested, gameObject);
+
         }
     }
 
