@@ -179,14 +179,14 @@ public class RoomScript : MonoBehaviour, INotifyPropertyChanged
 
     void OnTriggerStay(Collider collision)
     {
-        Debug.Log(name + " " + collision.name + " is within my boundaries");
+        //Debug.Log(name + " " + collision.name + " is within my boundaries");
         Lighted = true;
 
     }
 
     void OnTriggerExit(Collider collision)
     {
-        Debug.Log(name + " " + collision.name + " exited my boundaries");
+        //Debug.Log(name + " " + collision.name + " exited my boundaries");
         _player = null;
         Lighted = false;
     }
