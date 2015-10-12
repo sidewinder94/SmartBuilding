@@ -18,7 +18,7 @@ public class HUDScript : MonoBehaviour
         {
             if (_currentRoom == value) return;
             if (_currentRoom != null) _currentRoom.PropertyChanged -= CurrentRoomOnPropertyChanged;
-            value.PropertyChanged += CurrentRoomOnPropertyChanged;
+            if (value != null) value.PropertyChanged += CurrentRoomOnPropertyChanged;
             _currentRoom = value;
 
         }
@@ -62,6 +62,8 @@ public class HUDScript : MonoBehaviour
         {
             sender = PlayerCurrentRoom;
         }
+
+        if (sender == null) return;
 
         GameObject.Find("targetTempText").GetComponent<Text>().text = ((RoomScript)sender).TargetTemperature + " °C";
         GameObject.Find("currentTempText").GetComponent<Text>().text = ((RoomScript)sender).CurrentTemperature + " °C";
