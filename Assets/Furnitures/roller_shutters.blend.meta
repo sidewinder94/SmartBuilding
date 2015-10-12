@@ -1,0 +1,181 @@
+fileFormatVersion: 2
+guid: 8662674d1cbc69f4998b936bf74884ee
+timeCreated: 1444636806
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Bone
+    100004: Bone_001
+    100006: Bone_002
+    100008: Bone_003
+    100010: Bone_004
+    100012: Bone_005
+    100014: Bone_006
+    100016: Bone_007
+    100018: Bone_008
+    100020: Bone_009
+    100022: Bone_010
+    100024: Bone_011
+    100026: Bone_012
+    100028: Bone_013
+    100030: Bone_014
+    100032: Bone_015
+    100034: Cube_037
+    100036: Empty_033
+    100038: gartentor_part
+    100040: gartentor_part_001
+    100042: gartentor_part_002
+    100044: gartentor_part_003
+    100046: gartentor_part_004
+    100048: gartentor_part_005
+    100050: gartentor_part_006
+    100052: gartentor_part_007
+    100054: gartentor_part_008
+    100056: gartentor_part_009
+    100058: gartentor_part_010
+    100060: gartentor_part_011
+    100062: gartentor_part_012
+    100064: gartentor_part_013
+    100066: gartentor_part_014
+    100068: gartentor_part_015
+    100070: //RootNode
+    400000: Armature
+    400002: Bone
+    400004: Bone_001
+    400006: Bone_002
+    400008: Bone_003
+    400010: Bone_004
+    400012: Bone_005
+    400014: Bone_006
+    400016: Bone_007
+    400018: Bone_008
+    400020: Bone_009
+    400022: Bone_010
+    400024: Bone_011
+    400026: Bone_012
+    400028: Bone_013
+    400030: Bone_014
+    400032: Bone_015
+    400034: Cube_037
+    400036: Empty_033
+    400038: gartentor_part
+    400040: gartentor_part_001
+    400042: gartentor_part_002
+    400044: gartentor_part_003
+    400046: gartentor_part_004
+    400048: gartentor_part_005
+    400050: gartentor_part_006
+    400052: gartentor_part_007
+    400054: gartentor_part_008
+    400056: gartentor_part_009
+    400058: gartentor_part_010
+    400060: gartentor_part_011
+    400062: gartentor_part_012
+    400064: gartentor_part_013
+    400066: gartentor_part_014
+    400068: gartentor_part_015
+    400070: //RootNode
+    2300000: Cube_037
+    3300000: Cube_037
+    4300000: gartentor_part_001
+    4300002: gartentor_part_002
+    4300004: gartentor_part_003
+    4300006: gartentor_part_004
+    4300008: gartentor_part_005
+    4300010: gartentor_part_006
+    4300012: gartentor_part_007
+    4300014: gartentor_part_008
+    4300016: gartentor_part_009
+    4300018: gartentor_part_010
+    4300020: gartentor_part_011
+    4300022: gartentor_part_012
+    4300024: gartentor_part_013
+    4300026: gartentor_part_014
+    4300028: gartentor_part_015
+    4300030: gartentor_part
+    4300032: Cube_037
+    7400000: Default Take
+    7400002: gartentor
+    9500000: //RootNode
+    13700000: gartentor_part
+    13700002: gartentor_part_001
+    13700004: gartentor_part_002
+    13700006: gartentor_part_003
+    13700008: gartentor_part_004
+    13700010: gartentor_part_005
+    13700012: gartentor_part_006
+    13700014: gartentor_part_007
+    13700016: gartentor_part_008
+    13700018: gartentor_part_009
+    13700020: gartentor_part_010
+    13700022: gartentor_part_011
+    13700024: gartentor_part_012
+    13700026: gartentor_part_013
+    13700028: gartentor_part_014
+    13700030: gartentor_part_015
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
