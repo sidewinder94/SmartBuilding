@@ -171,6 +171,7 @@ public class RoomScript : MonoBehaviour, INotifyPropertyChanged
 
     void OnTriggerEnter(Collider collision)
     {
+        if (collision.gameObject.tag != "Player") return;
         Debug.Log(name + " " + collision.name + " collided with me");
         var script = collision.gameObject.GetComponent<PlayerScript>();
         _player = script;
@@ -178,13 +179,14 @@ public class RoomScript : MonoBehaviour, INotifyPropertyChanged
 
     void OnTriggerStay(Collider collision)
     {
+        if (collision.gameObject.tag != "Player") return;
         Debug.Log(name + " " + collision.name + " is within my boundaries");
         Lighted = true;
-
     }
 
     void OnTriggerExit(Collider collision)
     {
+        if (collision.gameObject.tag != "Player") return;
         Debug.Log(name + " " + collision.name + " exited my boundaries");
         _player = null;
         Lighted = false;
