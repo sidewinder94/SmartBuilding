@@ -15,6 +15,7 @@ public class RoomScript : MonoBehaviour, INotifyPropertyChanged
     public double AllowedDeltaTemp = 0.2;
     public double RoomSize = 0.0;
     public double InsulationConstant = 0.25;
+    public int WindowCount = 0;
 
     public double TargetTemperature
     {
@@ -45,9 +46,9 @@ public class RoomScript : MonoBehaviour, INotifyPropertyChanged
         get { return _lighted; }
         set
         {
-            if (value == _lighted) return;
             _lighted = value;
-            _roomLights.ForEach(rl => rl.GetComponent<Light>().intensity = value ? 8.0f : 0.0f);
+            if (WindowCount > 0 && _outside.Luminosity > 320) _lighted = false;
+            _roomLights.ForEach(rl => rl.GetComponent<Light>().intensity = _lighted ? 8.0f : 0.0f);
         }
     }
 

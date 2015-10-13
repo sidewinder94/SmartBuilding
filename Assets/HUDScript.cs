@@ -27,8 +27,11 @@ public class HUDScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
         _outside = GameObject.FindGameObjectWithTag("Terrain").GetComponent<OutsideScript>();
         _outside.PropertyChanged += OutsideOnPropertyChanged;
+        GetComponentInChildren<Slider>().value = _outside.Luminosity;
+        _outside.NormalizedLuminosity = GetComponentInChildren<Slider>().normalizedValue;
         OutsideOnPropertyChanged(_outside, new PropertyChangedEventArgs("Temperature"));
 
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
@@ -36,17 +39,22 @@ public class HUDScript : MonoBehaviour
 
         _heatPump = GameObject.FindGameObjectWithTag("HeatPump").GetComponent<HeatPumpScript>();
         _heatPump.PropertyChanged += HeatPumpOnPropertyChanged;
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        _outside.Luminosity = GetComponentInChildren<Slider>().value;
+        _outside.NormalizedLuminosity = GetComponentInChildren<Slider>().normalizedValue;
     }
 
     private void OutsideOnPropertyChanged(object sender, PropertyChangedEventArgs eventArgs)
     {
         GameObject.Find("extTempText").GetComponent<Text>().text = ((OutsideScript)sender).Temperature + " °C";
+        GameObject.Find("effectiveLuminosityText").GetComponent<Text>().text = ((OutsideScript)sender).Luminosity +
+                                                                               " Lux";
     }
 
     private void PlayerOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
